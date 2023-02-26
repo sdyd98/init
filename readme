@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ShowPlanXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.5" Build="11.0.7001.0" xmlns="http://schemas.microsoft.com/sqlserver/2004/07/showplan">
+  <BatchSequence>
+    <Batch>
+      <Statements>
+        <StmtSimple StatementCompId="1" StatementEstRows="1" StatementId="1" StatementOptmLevel="FULL" StatementOptmEarlyAbortReason="GoodEnoughPlanFound" StatementSubTreeCost="0.00985824" StatementText="select * from vDCommerceValid&#xD;&#xA;	where tamer_idx = 26" StatementType="SELECT" ParameterizedText="(@1 tinyint)SELECT * FROM [vDCommerceValid] WHERE [tamer_idx]=@1" QueryHash="0x9F6B0C1A604A2C9E" QueryPlanHash="0xF5DCD7D4746BAF68" RetrievedFromCache="true">
+          <StatementSetOptions ANSI_NULLS="true" ANSI_PADDING="true" ANSI_WARNINGS="true" ARITHABORT="true" CONCAT_NULL_YIELDS_NULL="true" NUMERIC_ROUNDABORT="false" QUOTED_IDENTIFIER="true" />
+          <QueryPlan NonParallelPlanReason="CouldNotGenerateValidParallelPlan" CachedPlanSize="32" CompileTime="1" CompileCPU="1" CompileMemory="256">
+            <MemoryGrantInfo SerialRequiredMemory="0" SerialDesiredMemory="0" />
+            <OptimizerHardwareDependentProperties EstimatedAvailableMemoryGrant="230400" EstimatedPagesCached="86400" EstimatedAvailableDegreeOfParallelism="3" />
+            <RelOp AvgRowSize="156" EstimateCPU="4.18E-06" EstimateIO="0" EstimateRebinds="0" EstimateRewinds="0" EstimatedExecutionMode="Row" EstimateRows="1" LogicalOp="Left Outer Join" NodeId="0" Parallel="false" PhysicalOp="Nested Loops" EstimatedTotalSubtreeCost="0.00985824">
+              <OutputList>
+                <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="idx" />
+                <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="tamer_idx" />
+                <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="state" />
+                <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="sign" />
+                <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="pos_x" />
+                <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="pos_y" />
+                <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="direct" />
+                <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="map_id" />
+                <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="channel_id" />
+                <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerceAuthExpired]" Alias="[DCA]" Column="auth_expired" />
+              </OutputList>
+              <NestedLoops Optimized="false">
+                <RelOp AvgRowSize="148" EstimateCPU="5.8E-07" EstimateIO="0" EstimateRebinds="0" EstimateRewinds="0" EstimatedExecutionMode="Row" EstimateRows="1" LogicalOp="Filter" NodeId="1" Parallel="false" PhysicalOp="Filter" EstimatedTotalSubtreeCost="0.00657096">
+                  <OutputList>
+                    <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="idx" />
+                    <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="tamer_idx" />
+                    <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="state" />
+                    <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="sign" />
+                    <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="pos_x" />
+                    <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="pos_y" />
+                    <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="direct" />
+                    <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="map_id" />
+                    <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="channel_id" />
+                  </OutputList>
+                  <Filter StartupExpression="false">
+                    <RelOp AvgRowSize="148" EstimateCPU="4.18E-06" EstimateIO="0" EstimateRebinds="0" EstimateRewinds="0" EstimatedExecutionMode="Row" EstimateRows="1" LogicalOp="Inner Join" NodeId="2" Parallel="false" PhysicalOp="Nested Loops" EstimatedTotalSubtreeCost="0.00657038">
+                      <OutputList>
+                        <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="idx" />
+                        <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="tamer_idx" />
+                        <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="state" />
+                        <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="sign" />
+                        <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="pos_x" />
+                        <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="pos_y" />
+                        <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="direct" />
+                        <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="map_id" />
+                        <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="channel_id" />
+                      </OutputList>
+                      <NestedLoops Optimized="false">
+                        <OuterReferences>
+                          <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="idx" />
+                        </OuterReferences>
+                        <RelOp AvgRowSize="23" EstimateCPU="0.0001581" EstimateIO="0.003125" EstimateRebinds="0" EstimateRewinds="0" EstimatedExecutionMode="Row" EstimateRows="1" LogicalOp="Index Seek" NodeId="3" Parallel="false" PhysicalOp="Index Seek" EstimatedTotalSubtreeCost="0.0032831" TableCardinality="1">
+                          <OutputList>
+                            <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="idx" />
+                            <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="tamer_idx" />
+                          </OutputList>
+                          <IndexScan Ordered="true" ScanDirection="FORWARD" ForcedIndex="false" ForceSeek="false" ForceScan="false" NoExpandHint="false" Storage="RowStore">
+                            <DefinedValues>
+                              <DefinedValue>
+                                <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="idx" />
+                              </DefinedValue>
+                              <DefinedValue>
+                                <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="tamer_idx" />
+                              </DefinedValue>
+                            </DefinedValues>
+                            <Object Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Index="[IX_DCOMMERCE_TAMER_IDX]" Alias="[DC]" IndexKind="NonClustered" />
+                            <SeekPredicates>
+                              <SeekPredicateNew>
+                                <SeekKeys>
+                                  <Prefix ScanType="EQ">
+                                    <RangeColumns>
+                                      <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="tamer_idx" />
+                                    </RangeColumns>
+                                    <RangeExpressions>
+                                      <ScalarOperator ScalarString="(26)">
+                                        <Const ConstValue="(26)" />
+                                      </ScalarOperator>
+                                    </RangeExpressions>
+                                  </Prefix>
+                                </SeekKeys>
+                              </SeekPredicateNew>
+                            </SeekPredicates>
+                          </IndexScan>
+                        </RelOp>
+                        <RelOp AvgRowSize="131" EstimateCPU="0.0001581" EstimateIO="0.003125" EstimateRebinds="0" EstimateRewinds="0" EstimatedExecutionMode="Row" EstimateRows="1" LogicalOp="Clustered Index Seek" NodeId="5" Parallel="false" PhysicalOp="Clustered Index Seek" EstimatedTotalSubtreeCost="0.0032831" TableCardinality="1">
+                          <OutputList>
+                            <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="state" />
+                            <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="sign" />
+                            <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="pos_x" />
+                            <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="pos_y" />
+                            <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="direct" />
+                            <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="map_id" />
+                            <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="channel_id" />
+                          </OutputList>
+                          <IndexScan Lookup="true" Ordered="true" ScanDirection="FORWARD" ForcedIndex="false" ForceSeek="false" ForceScan="false" NoExpandHint="false" Storage="RowStore">
+                            <DefinedValues>
+                              <DefinedValue>
+                                <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="state" />
+                              </DefinedValue>
+                              <DefinedValue>
+                                <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="sign" />
+                              </DefinedValue>
+                              <DefinedValue>
+                                <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="pos_x" />
+                              </DefinedValue>
+                              <DefinedValue>
+                                <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="pos_y" />
+                              </DefinedValue>
+                              <DefinedValue>
+                                <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="direct" />
+                              </DefinedValue>
+                              <DefinedValue>
+                                <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="map_id" />
+                              </DefinedValue>
+                              <DefinedValue>
+                                <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="channel_id" />
+                              </DefinedValue>
+                            </DefinedValues>
+                            <Object Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Index="[PK_DCommerce]" Alias="[DC]" TableReferenceId="-1" IndexKind="Clustered" />
+                            <SeekPredicates>
+                              <SeekPredicateNew>
+                                <SeekKeys>
+                                  <Prefix ScanType="EQ">
+                                    <RangeColumns>
+                                      <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="idx" />
+                                    </RangeColumns>
+                                    <RangeExpressions>
+                                      <ScalarOperator ScalarString="[DMO_1000G].[dbo].[DCommerce].[idx] as [DC].[idx]">
+                                        <Identifier>
+                                          <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="idx" />
+                                        </Identifier>
+                                      </ScalarOperator>
+                                    </RangeExpressions>
+                                  </Prefix>
+                                </SeekKeys>
+                              </SeekPredicateNew>
+                            </SeekPredicates>
+                          </IndexScan>
+                        </RelOp>
+                      </NestedLoops>
+                    </RelOp>
+                    <Predicate>
+                      <ScalarOperator ScalarString="[DMO_1000G].[dbo].[IsValidDCommerceState]([DMO_1000G].[dbo].[DCommerce].[state] as [DC].[state])=(1)">
+                        <Compare CompareOp="EQ">
+                          <ScalarOperator>
+                            <UserDefinedFunction FunctionName="[DMO_1000G].[dbo].[IsValidDCommerceState]">
+                              <ScalarOperator>
+                                <Identifier>
+                                  <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerce]" Alias="[DC]" Column="state" />
+                                </Identifier>
+                              </ScalarOperator>
+                            </UserDefinedFunction>
+                          </ScalarOperator>
+                          <ScalarOperator>
+                            <Const ConstValue="(1)" />
+                          </ScalarOperator>
+                        </Compare>
+                      </ScalarOperator>
+                    </Predicate>
+                  </Filter>
+                </RelOp>
+                <RelOp AvgRowSize="15" EstimateCPU="0.0001581" EstimateIO="0.003125" EstimateRebinds="0" EstimateRewinds="0" EstimatedExecutionMode="Row" EstimateRows="1" LogicalOp="Clustered Index Seek" NodeId="22" Parallel="false" PhysicalOp="Clustered Index Seek" EstimatedTotalSubtreeCost="0.0032831" TableCardinality="0">
+                  <OutputList>
+                    <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerceAuthExpired]" Alias="[DCA]" Column="auth_expired" />
+                  </OutputList>
+                  <IndexScan Ordered="true" ScanDirection="FORWARD" ForcedIndex="false" ForceSeek="false" ForceScan="false" NoExpandHint="false" Storage="RowStore">
+                    <DefinedValues>
+                      <DefinedValue>
+                        <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerceAuthExpired]" Alias="[DCA]" Column="auth_expired" />
+                      </DefinedValue>
+                    </DefinedValues>
+                    <Object Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerceAuthExpired]" Index="[PK_DCommerceAuthExpired]" Alias="[DCA]" IndexKind="Clustered" />
+                    <SeekPredicates>
+                      <SeekPredicateNew>
+                        <SeekKeys>
+                          <Prefix ScanType="EQ">
+                            <RangeColumns>
+                              <ColumnReference Database="[DMO_1000G]" Schema="[dbo]" Table="[DCommerceAuthExpired]" Alias="[DCA]" Column="tamer_idx" />
+                            </RangeColumns>
+                            <RangeExpressions>
+                              <ScalarOperator ScalarString="(26)">
+                                <Const ConstValue="(26)" />
+                              </ScalarOperator>
+                            </RangeExpressions>
+                          </Prefix>
+                        </SeekKeys>
+                      </SeekPredicateNew>
+                    </SeekPredicates>
+                  </IndexScan>
+                </RelOp>
+              </NestedLoops>
+            </RelOp>
+            <ParameterList>
+              <ColumnReference Column="@1" ParameterCompiledValue="(26)" />
+            </ParameterList>
+          </QueryPlan>
+        </StmtSimple>
+      </Statements>
+      <Statements>
+        <StmtSimple>
+          <UDF ProcName="[DMO_1000G].[dbo].[IsValidDCommerceState]">
+            <Statements>
+              <StmtSimple StatementCompId="7" StatementId="2" StatementText="&#xD;&#xA;-- DCommerce 상태에 따라 반환한다. CREATE = 1, CLOSE = 5&#xD;&#xA;CREATE FUNCTION [dbo].[IsValidDCommerceState] (@state tinyint)&#xD;&#xA;RETURNS BIT&#xD;&#xA;AS&#xD;&#xA;BEGIN&#xD;&#xA;	RETURN CASE WHEN @state IN (1, 5) THEN 0 ELSE 1 END&#xD;" StatementType="RETURN" RetrievedFromCache="true" />
+            </Statements>
+          </UDF>
+        </StmtSimple>
+      </Statements>
+    </Batch>
+  </BatchSequence>
+</ShowPlanXML>
